@@ -1,24 +1,13 @@
 
 
-;toggle td as 'proposed' or 'canDo'
+/*toggle td as 'proposed' or 'canDo'
 
-md(byid(1454058000000));
+;md(byid(1454058000001));
 
 ;toggle td as visible or not
-show(1454058000000)
-hide();
-
-
-
-;proposed approach: toggle all unavilable td to be hidden. then paint over the remainder
-
-;JACS - Javascript Advanced Calendar Script
-;
-
-
+;hide();*/
 
 var CLIENT_ID = '960209755963-hr5aovpkosfm9gvi7mlde1ae3shhrhrt.apps.googleusercontent.com';
-
       var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
       /**
@@ -106,8 +95,7 @@ var CLIENT_ID = '960209755963-hr5aovpkosfm9gvi7mlde1ae3shhrhrt.apps.googleuserco
         });
       }
 
-      /**
-       * Append a pre element to the body containing the given message
+       /* Append a pre element to the body containing the given message
        * as its text node.
        *
        * @param {string} message Text to be placed in pre element.
@@ -117,6 +105,17 @@ var CLIENT_ID = '960209755963-hr5aovpkosfm9gvi7mlde1ae3shhrhrt.apps.googleuserco
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
       }
+      
+      /*Import Google API js*/
+	/*Super Janky for now*/
+		var imported = document.createElement('script');
+		imported.src = 'https://apis.google.com/js/client.js?onload=checkAuth';
+		document.head.appendChild(imported);
 
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
-    </script>
+
+/*Insert HTML*/
+var html = '<div id="authorize-div" style="display: none"><span>Authorize access to Google Calendar API</span><!--Button for the user to click to initiate auth sequence --><button id="authorize-button" onclick="handleAuthClick(event)">Authorize</button></div><pre id="output"></pre>'
+
+document.getElementById("mainForm").innerHTML = html;
+
+
