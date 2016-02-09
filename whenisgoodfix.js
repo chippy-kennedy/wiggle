@@ -8,7 +8,7 @@
 ;hide();*/
 
 var CLIENT_ID = '960209755963-hr5aovpkosfm9gvi7mlde1ae3shhrhrt.apps.googleusercontent.com';
-      var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
+			var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
       /**
        * Check if current user has authorized this application.
